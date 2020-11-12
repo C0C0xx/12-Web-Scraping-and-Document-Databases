@@ -1,0 +1,23 @@
+h1 {
+    color: blue;
+}
+.h2Title{
+    padding-top: 30px;
+    color: #40908C;
+}
+
+.thumbnailImg{
+    margin:10px;
+    width:46%;
+}
+.left{
+    float:left;
+}
+.right{
+    float:right;
+}
+.thumbnailImg:hover {
+    /* Visuals */
+    opacity: 0.6;
+    /* border : 2px solid #4AAAA5 */
+  }

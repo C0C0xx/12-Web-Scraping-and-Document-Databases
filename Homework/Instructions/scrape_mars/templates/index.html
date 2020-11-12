@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars data map</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mars website...</h1>
+      <p>Scrap for more data.</p>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
+    </div>
+    <!-- <img src="{{ mars.full_url }}" alt="Mars Img">
+    <h2>The Mars News:</h2>
+    <h3>Latest News: {{ mars.news_title }}</h3>
+    <h3>Article: {{ mars.article_title }}</h3> -->
+  </div>
+
+
+<!-- Make my web page here -->
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+  <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> -->
+    <!-- <span class="navbar-toggler-icon"></span> -->
+  <!-- </button> -->
+
+  <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="table.html">table</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="image01.html">Temperature</a>
+          <a class="dropdown-item" href="image02.html">WindSpeed</a>
+          <a class="dropdown-item" href="image03.html">Clouds</a>
+          <a class="dropdown-item" href="image04.html">Humidity</a>
+        </div>
+      </li> -->
+      <!-- <li class="nav-item"> -->
+      <!-- <a class="nav-link disabled" href="#">Disabled</a> --> -->
+      <!-- </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav> -->
+
+<div class="container-fluid" style="width:100%; height:90vh;border:1px solid black;margin-left: 10px;">
+    <div class="row"  style="width:100%; height:15vh;border:1px solid red">
+      <!-- <div class = "col-md-1" style="border:1px solid gray"></div> -->
+      <div class="col-md-7" style="border:1px solid gray">
+        <h2 class='h2Title'>Mars News</h2>
+      </div>
+      
+      <div class="col-md-5" style="border:1px solid gray">
+        <h2 class="h2Title"> Hemisphere</h2>
+      </div>
+      <!-- <div class="col-md-1"style="border:1px solid gray"></div> -->
+    </div>
+    <div class="row"  style="width:100%; height:75vh;border:1px solid goldenrod">
+      <!-- <div class = "col-md-1" style="border:1px solid gray"></div> -->
+      <div class="col-md-7" style="border:1px solid gray">
+        
+        <span>
+          <img src="{{ mars.full_url }}" style="float:left; margin-right:10px"/>
+          <!-- For this homework we'll be creating a visualization dashboard website using visualizations we've created in a past assignment. Specifically, we'll be plotting [weather data](Resources/cities.csv). -->
+
+          <!-- In building this dashboard, we'll create individual pages for each plot and a means by which we can navigate between them. These pages will contain the visualizations and their corresponding explanations. We'll also have a landing page, a page where we can see a comparison of all of the plots, and another page where we can view the data used to build them. -->
+        </span>
+        <br>
+        <h2>The Mars News:</h2>
+    <h3>Latest News: {{ mars.news_title }}</h3>
+    <h3>Article: {{ mars.article_title }}</h3>
+    {{mars.table| safe }}
+      </div>
+      
+      <div class="col-md-5" style="border:1px solid gray">
+        <!-- first div for first row of images -->
+        <div>
+          <a href="image01.html"><img src = "{{ mars.mars_dic['Cerberus Hemisphere Enhanced thumbnail'] }}" class="thumbnailImg left"/></a>
+
+
+          <a href="image02.html"><img src = "{{ mars.mars_dic['Schiaparelli Hemisphere Enhanced thumbnail'] }}" class="thumbnailImg right"/></a>
+
+
+        </div>
+        <div>
+          <a href="image03.html"><img src = "{{ mars.mars_dic['Syrtis Major Hemisphere Enhanced thumbnail'] }}" class="thumbnailImg left"/></a> 
+          <a href="image04.html"><img src = "{{ mars.mars_dic['Valles Marineris Hemisphere Enhanced thumbnail'] }}" class="thumbnailImg right"/></a>
+        </div>
+      
+      </div>
+      <!-- <div class="col-md-1"style="border:1px solid gray"></div> -->
+    </div>
+</div>
+<div class="footer" style="background-color: lightgray;">
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>
